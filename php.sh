@@ -9,6 +9,7 @@ sudo apt install \
   php7.*-common \
   php7.*-curl \
   php7.*-gd \
+  php-imagick \
   php7.*-imap \
   php7.*-json \
   php7.*-mbstring \
