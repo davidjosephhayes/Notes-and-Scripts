@@ -7,7 +7,7 @@ fi
 
 # install required packages
 PACKAGE="python-software-properties"
-if ! dpkg -l | grep -q "$PACKAG"E; then
+if ! dpkg -l | grep -q "$PACKAGE"; then
   sudo apt install "$PACKAGE"
 fi
 
