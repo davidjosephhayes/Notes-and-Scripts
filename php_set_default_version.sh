@@ -1,7 +1,7 @@
 PHPVER=$1;
 
 re='^[0-9]+([.][0-9]+)?$'
-if ! [[ $PHPVER =~ $re ]] ; then
+if ! [[ "$PHPVER" =~ $re ]] ; then
    echo "Usage ./$0 PHP_VERSION" >&2; exit 1
 fi
 
