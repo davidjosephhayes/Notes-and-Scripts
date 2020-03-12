@@ -2,7 +2,6 @@
 # https://stackoverflow.com/questions/27497723/export-a-pkcs12-file-without-an-export-password
 
 PFX_FILE=$1;
-OUTPUT=$2;
 
 if [ ! -f "$PFX_FILE" ] ; then
    echo "Usage ./$0 PFX_FILE" >&2; exit 1
