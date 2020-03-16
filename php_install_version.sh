@@ -29,6 +29,7 @@ sudo apt install -y \
   php$PHPVER-gd \
   php-imagick \
   php$PHPVER-imap \
+  php$PHPVER-intl \
   php$PHPVER-json \
   php$PHPVER-mbstring \
   php$PHPVER-mysql \
