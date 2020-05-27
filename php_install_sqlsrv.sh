@@ -38,7 +38,7 @@ source ~/.bashrc
 sudo apt-get install unixodbc-dev
 
 # Install PECL packages
-sudo pecl install sqlsrv
+sudo pecl install sqlsrv # add a -f after install to force install these for different versions
 sudo pecl install pdo_sqlsrv
 sudo su
 printf "; priority=20\nextension=sqlsrv.so\n" > "/etc/php/$PHPVER/mods-available/sqlsrv.ini"

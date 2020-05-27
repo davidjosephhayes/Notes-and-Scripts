@@ -13,14 +13,14 @@ if [ -x "$(command -v pecl)" ]; then
    sudo pecl config-set ext_dir /usr/lib/php/$PHPAPI
    sudo pecl config-set php_bin /usr/bin/php$PHPVER
    sudo pecl config-set php_ini /etc/php/$PHPVER/cli/php.ini
-   sudo pecl config-set php_suffix 7.3
+   sudo pecl config-set php_suffix $PHPVER
 fi
 
 if [ -x "$(command -v pear)" ]; then
    sudo pear config-set ext_dir /usr/lib/php/$PHPAPI
    sudo pear config-set php_bin /usr/bin/php$PHPVER
    sudo pear config-set php_ini /etc/php/$PHPVER/cli/php.ini
-   sudo pear config-set php_suffix 7.3
+   sudo pear config-set php_suffix $PHPVER
 fi
 
 sudo update-alternatives --set php /usr/bin/php$PHPVER;
