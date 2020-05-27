@@ -6,7 +6,7 @@ if ! [[ "$PHPVER" =~ $re ]] ; then
 fi
 
 # install required packages
-PACKAGE="python-software-properties"
+PACKAGE="software-properties-common"
 if ! dpkg -l | grep -q "$PACKAGE"; then
   sudo apt install "$PACKAGE"
 fi
@@ -26,6 +26,7 @@ sudo apt install -y \
   php$PHPVER-cli \
   php$PHPVER-common \
   php$PHPVER-curl \
+  php$PHPVER-dev \
   php$PHPVER-gd \
   php-imagick \
   php$PHPVER-imap \
