@@ -1,6 +1,7 @@
 # NOT STAND ALONE, JUST NOTES
 # https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
 # https://docs.microsoft.com/en-us/sql/connect/php/installation-tutorial-linux-mac?view=sql-server-ver15#installing-the-drivers-on-ubuntu-1604-1804-and-1910
+# https://serverpilot.io/docs/how-to-install-the-php-sqlsrv-extension/
 # run php_install_sqlsrv.sh $PHPVER first
 
 PHPVER=$1;
@@ -9,7 +10,6 @@ re='^[0-9]+([.][0-9]+)?$'
 if ! [[ "$PHPVER" =~ $re ]] ; then
    echo "Usage ./$0 PHP_VERSION" >&2; exit 1
 fi
-
 
 sudo su
 curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
