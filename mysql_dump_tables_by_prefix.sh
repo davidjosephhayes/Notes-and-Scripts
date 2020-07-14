@@ -1,15 +1,16 @@
 #!/bin/bash
 
 DB=$1
-PREFIX=$2;
+USER=$2
+PREFIX=$3
 
-if [ -z "$DB" ] || [ -z "$PREFIX" ]; then
-  echo "Usage ./$0 DB PREFIX" >&2; exit 1
+if [ -z "$DB" ] || [ -z "$USER" ] || [ -z "$PREFIX" ]; then
+  echo "Usage ./$0 DB USER PREFIX" >&2; exit 1
 fi
 
 re='^[A-Za-z][A-Za-z0-9_]*$'
-if ! [[ "$PREFIX" =~ $re ]] || ! [[ "$DB" =~ $re ]]; then
-   echo "Invalid database name or table prefix" >&2; exit 1
+if ! [[ "$PREFIX" =~ $re ]] || ! [[ "$USER" =~ $re ]] || ! [[ "$DB" =~ $re ]]; then
+   echo "Invalid database name, user, or table prefix" >&2; exit 1
 fi
 
-mysqldump DBNAME $(mysql -D $DB -Bse "show tables like '$PREFIX%'")
+mysqldump DBNAME $(mysql -D $DB -u $USER -p -Bse "show tables like '$PREFIX%'")
