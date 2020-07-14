@@ -13,4 +13,4 @@ if ! [[ "$PREFIX" =~ $re ]] || ! [[ "$USER" =~ $re ]] || ! [[ "$DB" =~ $re ]]; t
    echo "Invalid database name, user, or table prefix" >&2; exit 1
 fi
 
-mysqldump DBNAME $(mysql -D $DB -u $USER -p -Bse "show tables like '$PREFIX%'")
+mysqldump -u $USER -p DBNAME $(mysql -D $DB -u $USER -p -Bse "show tables like '$PREFIX%'")
